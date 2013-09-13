@@ -45,31 +45,28 @@
   </div>
 </div>
 <div class="github col-md-10 col-md-offset-1">
-  <div id="gitinfo" class="col-md-12">
-      <p>Github Username:<a href="{{github_html_url}}">{{github_user.login}}</a></p>
-      {% for repo in github_repos %}
-      <div class="col-md-6">
-      <a href="{{repo.svn_url}}">{{repo.name}}</a>
-      <p>
-      {{repo.description}}<br />
-        HTTPS Clone URL: <input type="text" class="cloneurl form-control" value="{{repo.clone_url|safe}}"></p>
-  </div>
-    {% endfor %}
-  </div>
-  <div id="gitcommits" class="col-md-12">
-    {% for commit in commits %}
-    <div class="commit col-md-6">
-        {{commit.time|safe}}
-        {{commit.title|safe}}
-        <div class="thecommit">
-            <p>{{commit.code|safe}} {{commit.summary|safe}}</p>
+    <p>Github Username:<a href="{{github_html_url}}">{{github_user.login}}</a></p>
+    {% for repo in github_repos %}
+        <div class="repo col-md-6">
+            <a href="{{repo.svn_url}}">{{repo.name}}</a>
+            <p>
+                {{repo.description}}<br />
+                HTTPS Clone URL: <input type="text" class="cloneurl form-control" value="{{repo.clone_url|safe}}">
+            </p>
         </div>
-      </div>
     {% endfor %}
-  </div>
+    {% for commit in commits %}
+        <div class="commit col-md-6">
+            {{commit.time|safe}}
+            {{commit.title|safe}}
+            <div class="thecommit">
+                <p>{{commit.code|safe}} {{commit.summary|safe}}</p>
+            </div>
+        </div>
+    {% endfor %}
 </div>
 <div class="blogposts col-md-10 col-md-offset-1">
-  <h2>Recent Blog Posts</h2>
+    <h2>Recent Blog Posts</h2>
     {% for entry in entries %}
         <div class="col-md-6">
             <h4><a href="{{entry.get_absolute_url}}">{{entry.title}}</a></h4>
