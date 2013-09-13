@@ -79,7 +79,6 @@ time {
 }
 .github {
   background-color: #a6cd4c;
-  margin-top: 30px;
 }
 
 #gitinfo {
@@ -117,7 +116,10 @@ time {
 
 /* Index Blog Entries */
 .blogposts {
-  padding-bottom: 20px;
+  padding-bottom: 10px;
+}
+.blogposts h2 {
+  margin-top: 10px;
 }
 .ientries h4 {
   margin-top: 0px;
@@ -164,7 +166,9 @@ time {
 .inputfix {
   padding-left: 0px;
 }
-
+.contact h2 {
+  margin-top: 10px;
+}
 /*Footer*/
 .footer {
   min-height: 40px;

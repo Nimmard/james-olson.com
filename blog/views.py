@@ -11,7 +11,7 @@ class BlogMenuMixin(object):
     
     def get_context_data(self, **kwargs):
         context = super(BlogMenuMixin, self).get_context_data(**kwargs)
-        context['categories'] = Category.objects.all
+        context['categories'] = set(Category.objects.filter(entries__isnull=False))
 
         return context
 
