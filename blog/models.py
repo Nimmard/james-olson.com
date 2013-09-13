@@ -1,6 +1,6 @@
 from django.db import models
-from django.core.urlresolvers import reverse
 from django.contrib.auth.models import User
+
 class Category(models.Model):
     title = models.CharField(max_length=100)
     slug = models.SlugField(max_length=100)
@@ -9,7 +9,8 @@ class Category(models.Model):
         return '%s' % self.title
 
     def get_absolute_url(self):
-        return reverse('view_blog_category', {'slug': self.slug })
+        return "/blog/category/{0}".format(self.slug)
+
     class Meta:
         verbose_name_plural = "Categories"
 
