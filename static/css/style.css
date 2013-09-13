@@ -53,6 +53,7 @@ body {
 
 #gitinfo {
   border-bottom: 2px solid #333;
+  overflow: hidden;
 }
 .cloneurl {
   width: 150px;
@@ -66,9 +67,9 @@ time {
 
 .thecommit {
   padding-left: 10px;
-  
   border-left: solid 4px #fff;
 }
+
 .thecommit p code {
   background-color: black;
   font-color: #fff;
@@ -77,23 +78,7 @@ a {
   color: #333;
   font-weight: bolder;
 }
-/*Contact */
-.inputfix {
-  padding-left: 0px;
-}
 
-/*Footer*/
-.footer {
-  min-height: 40px;
-  background-color: #fe4c4c;
-  text-align: center;
-}
-#copyright {
-  line-height: 2.5em;
-  font-size: 18px;
-}
-
-/* Github */
 .commits {
   float: right;
 }
@@ -107,6 +92,12 @@ a {
   float: left;
 }
 
+#gitcommits {
+  overflow: hidden;
+}
+#gitcommits {
+  overflow: hidden;
+}
 /*Blog Posts*/
 .alternate {
   background-color: #a6cd4c;
@@ -127,4 +118,19 @@ a {
 #comments {
   margin: 0 auto;
   position: relative;
+}
+/*Contact */
+.inputfix {
+  padding-left: 0px;
+}
+
+/*Footer*/
+.footer {
+  min-height: 40px;
+  background-color: #fe4c4c;
+  text-align: center;
+}
+#copyright {
+  line-height: 2.5em;
+  font-size: 18px;
 }

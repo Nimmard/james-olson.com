@@ -48,13 +48,15 @@
   <div id="gitinfo" class="col-md-12">
       <p>Github Username:<a href="{{github_html_url}}">{{github_user.login}}</a></p>
       {% for repo in github_repos %}
+      <div class="col-md-6">
       <a href="{{repo.svn_url}}">{{repo.name}}</a>
       <p>
       {{repo.description}}<br />
         HTTPS Clone URL: <input type="text" class="cloneurl form-control" value="{{repo.clone_url|safe}}"></p>
+  </div>
     {% endfor %}
   </div>
-  <div class="col-md-12">
+  <div id="gitcommits" class="col-md-12">
     {% for commit in commits %}
     <div class="commit col-md-6">
         {{commit.time|safe}}

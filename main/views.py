@@ -18,13 +18,14 @@ class SiteIndexView(TemplateView):
         git_commits = []
         for entry in entries[:4]:
             soup = BeautifulSoup(entry.summary)
-            blah = {
-                    'time' : str(soup.time),
-                    'title' : str(soup.find_all(class_='title')[0]),
-                    'code' : str(soup.code.a),
-                    'summary': unicode(soup.blockquote.text)
-                    }
-            git_commits.append(blah)
+            if 'octicon-git-commit' in soup.span['class']:
+                blah = {
+                        'time' : str(soup.time),
+                        'title' : str(soup.find_all(class_='title')[0]),
+                        'code' : str(soup.code.a),
+                        'summary': unicode(soup.blockquote.text)
+                        }
+                git_commits.append(blah)
         context = super(SiteIndexView, self).get_context_data(**kwargs)
         context['entries'] = Entries.objects.order_by('-created')[:4]
         context['commits'] = git_commits
