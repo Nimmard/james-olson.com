@@ -27,9 +27,9 @@
         <div class="col-md-10 col-md-offset-1">
           <h1 class="headername">James Olson</h1>
           <ul class="menuitems nav nav-pills pull-right">
-            <li class="btn">Blog</li>
-            <li class="btn">Home</li>
-            <li class="btn">Portfolio</li>
+            <li class="btn"><a href="{% url 'siteindex' %}">Home</a></li>
+            <li class="btn"><a href="{% url 'blogindex' %}">Blog</a></li>
+            <li class="btn"><a href="#">Portfolio</a></li>
           </ul>
         </div>
           {% block content %}

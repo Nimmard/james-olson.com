@@ -108,16 +108,31 @@ time {
   float: left;
 }
 
-/*Blog Posts*/
+/*Blog entries*/
 .alternate {
   background-color: #a6cd4c;
 }
 .first {
   background-color: #67cde3;
 }
+
 #entries {
   padding-left: 0px;
   padding-right: 0px;
+}
+.entry {
+  padding-left: 15px;
+
+  padding-top: 1px;
+  padding-right: 15px;
+}
+.entry h3 {
+  margin-top: 10px;
+  margin-bottom: 0px;
+}
+.entryposted, .entrycat {
+  font-size: 10px;
+  display: block;
 }
 
 /* comments */
@@ -146,6 +161,9 @@ time {
 }
 
 /* Blog Menu */
-.menu {
-  text-align: center;
+.menu h5 {
+  text-align: center; 
+}
+.menu ul {
+  list-style-type: none;
 }
