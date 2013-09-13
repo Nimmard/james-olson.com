@@ -19,8 +19,8 @@ a {
 }
 
 .container {
-  margin-top: 30px;
-  margin-bottom: 30px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 /* Header */
@@ -38,22 +38,29 @@ a {
   font-family: 'Cinzel Decorative', cursive;
   font-weight: bolder;
   margin: 0px;
+  vertical-align: middle;
+  margin-top: 15px;
   float: left;
 }
 /* Info */
 .info {
-  margin-top: 30px;
+  margin-top: 10px;
   background-color: #67cde3;
   color: #fffeff;
 }
 
 .info h2 {
   font-family: 'Port Lligat Sans', sans-serif;
-  font-size: 50px;
+  font-size: 45px;
+  margin-bottom: 0px;
+  margin-top: 5px;
 }
 
 .info li {
-  font-size: 20px;
+  font-size: 17px;
+}
+.info ul {
+  list-style: none;
 }
 /* Github */
 .commit {
@@ -106,6 +113,15 @@ time {
 }
 .commits li code, .commits li span {
   float: left;
+}
+
+/* Index Blog Entries */
+.blogposts {
+  padding-bottom: 20px;
+}
+.ientries h4 {
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 /*Blog entries*/

@@ -68,9 +68,9 @@
 <div class="blogposts col-md-10 col-md-offset-1">
     <h2>Recent Blog Posts</h2>
     {% for entry in entries %}
-        <div class="col-md-6">
+        <div class="ientries col-md-6">
             <h4><a href="{{entry.get_absolute_url}}">{{entry.title}}</a></h4>
-            {{entry.created}}
+            <span class="entryposted">{{entry.created}}</span>
             <p>{{ entry.body|shortenEntry}}</p>
         </div>
     {% endfor %}
