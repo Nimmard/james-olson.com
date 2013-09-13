@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% load entryfilters %}
+{% block content %}
+<div class="info col-md-10 col-md-offset-1 ">
+  <div class="col-md-5 col-md-offset-1">
+    <h2>Developer</h2>
+    <ul>
+      <li>Python</li>
+      <li>Javascript</li>
+    </ul>
+  </div>
+  <div class="col-md-5">
+    <h2>Using these:</h2>
+    <ul>
+      <li>Django</li>
+      <li>Django-Rest-Framework</li>
+      <li>Jquery</li>
+      <li>Wordpress</li>
+    </ul>
+  </div>
+</div>
+<div class="contact col-md-10 col-md-offset-1">
+  <div class="col-md-12">
+    <h2>Contact me:</h2>
+    <form role="form">
+      <div class="col-md-5">
+        <div class="form-group">
+            <input type="text" class="form-control" id="name" placeholder="Enter Name">
+        </div>
+        <div class="form-group">
+          <input type="email" class="form-control" id="email" placeholder="Enter E-Mail">
+        </div>
+        <div class="form-group">
+          <div class="col-md-3 col-md-offset-4">
+            <button type="submit" class="btn btn-default">Submit</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-7">
+        <div class="form-group">
+          <textarea class="form-control" rows="8" placeholder="Enter message"></textarea>
+        </div>
+      </div>
+    <form>
+  </div>
+</div>
+<div class="github col-md-10 col-md-offset-1">
+  <div id="gitinfo" class="col-md-12">
+      <p>Github Username:<a href="{{github_html_url}}">{{github_user.login}}</a></p>
+      {% for repo in github_repos %}
+      <a href="{{repo.svn_url}}">{{repo.name}}</a>
+      <p>
+      {{repo.description}}<br />
+        HTTPS Clone URL: <input type="text" class="cloneurl form-control" value="{{repo.clone_url|safe}}"></p>
+    {% endfor %}
+  </div>
+  <div class="col-md-12">
+    {% for commit in commits %}
+    <div class="commit col-md-6">
+        {{commit.time|safe}}
+        {{commit.title|safe}}
+        <div class="thecommit">
+            <p>{{commit.code|safe}} {{commit.summary|safe}}</p>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+<div class="blogposts col-md-10 col-md-offset-1">
+  <h2>Recent Blog Posts</h2>
+    {% for entry in entries %}
+        <div class="col-md-6">
+            <h4><a href="{{entry.get_absolute_url}}">{{entry.title}}</a></h4>
+            {{entry.created}}
+            <p>{{ entry.body|shortenEntry}}</p>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{%block content %}
+<div  id="entries" class=" col-md-10 col-md-offset-1">
+  {% for entry in entries %}
+  <div class="entry col-md-12">
+      <h3><a href="{{entry.get_absolute_url}}">{{ entry.title }}</a></h3>
+    <p>{{ entry.body }}</p>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}
