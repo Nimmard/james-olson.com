@@ -5,9 +5,16 @@ body {
   font-size: 14px;
   font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
 }
+
+a {
+  color: #333;
+  font-weight: bolder;
+}
+
 #authenticated {
   padding-top: 70px;
 }
+
 .container {
   margin-top: 30px;
   margin-bottom: 30px;
@@ -46,8 +53,19 @@ body {
   font-size: 20px;
 }
 /* Github */
+.commit {
+  margin-top: 10px;
+  font-size: 12px;
+}
+
+time {
+  font-size: 12px;
+}
 .repo {
   border-bottom: 3px solid black;
+  height: 100px;
+  margin-right: 10px;
+  width: 48%;
 }
 .github {
   background-color: #a6cd4c;
@@ -63,9 +81,6 @@ body {
   font-size: 13px;
   display: inline;
 }
-time {
-  font-size: 13px;
-}
 
 .thecommit {
   padding-left: 10px;
@@ -76,27 +91,7 @@ time {
   background-color: black;
   font-color: #fff;
 }
-a {
-  color: #333;
-  font-weight: bolder;
-}
-/*Contact */
-.inputfix {
-  padding-left: 0px;
-}
 
-/*Footer*/
-.footer {
-  min-height: 40px;
-  background-color: #fe4c4c;
-  text-align: center;
-}
-#copyright {
-  line-height: 2.5em;
-  font-size: 18px;
-}
-
-/* Github */
 .commits {
   float: right;
 }
@@ -130,4 +125,19 @@ a {
 #comments {
   margin: 0 auto;
   position: relative;
+}
+/*Contact */
+.inputfix {
+  padding-left: 0px;
+}
+
+/*Footer*/
+.footer {
+  min-height: 40px;
+  background-color: #fe4c4c;
+  text-align: center;
+}
+#copyright {
+  line-height: 2.5em;
+  font-size: 18px;
 }
