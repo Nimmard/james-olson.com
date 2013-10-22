@@ -12,15 +12,7 @@
         {% endfor %}
     </div>
     <div class="menu col-md-3">
-        <div class="menu">
-            <h5>Categories</h5>
-            <ul>
-            {% for category in categories %}
-            <li><a href="{{category.get_absolute_url}}">{{category.title}}</a></li>
-            {% endfor %}
-            </ul>
-            <h5>Archives</h5>
-        </div>
+        {% include "blog/sidebar.html" %}
     </div>
 </div>
 {% endblock %}

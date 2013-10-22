@@ -2,6 +2,7 @@
 
 {% block content %}
 <div class="col-md-10 col-md-offset-1">
+    <div id="entries" class="col-md-9">
     <h2>{{entry.title}}</h2>
     <p>{{entry.body}}</p>
     <span id="comments">View comments</span>
@@ -18,5 +19,10 @@
         })();
     </script>
     <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+    <div class="menu col-md-3">
+        {% include "blog/sidebar.html" %}
+    </div>
+
 </div>
 {% endblock %}

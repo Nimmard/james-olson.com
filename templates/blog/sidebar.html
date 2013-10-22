@@ -1,0 +1,15 @@
+<div class="menu">
+            <h5>Categories</h5>
+            <ul>
+            {% for category in categories %}
+            <li><a href="{{category.get_absolute_url}}">{{category.title}}</a></li>
+            {% endfor %}
+            </ul>
+            <h5>Archives</h5>
+                {% for year, months in archives.items %}
+                    {{year}}<br />
+                    {% for month, entry_count in months.items %}
+                    <a href="/blog/{{year}}/{{month}}">{{ month }}</a> {{entry_count}} <br />
+                    {% endfor %}
+                {% endfor %}
+        </div>
