@@ -23,26 +23,27 @@
 </div>
 <div class="contact col-md-10 col-md-offset-1">
     <h2>Contact me:</h2>
-    <form role="form">
+    <form id='contactform' role="form">
+        {% csrf_token %}
       <div class="col-md-5">
         <div class="form-group">
-            <input type="text" class="form-control" id="name" placeholder="Enter Name">
+            <input type="text" class="form-control" name="name" id="name" placeholder="Enter Name">
         </div>
         <div class="form-group">
-          <input type="email" class="form-control" id="email" placeholder="Enter E-Mail">
+          <input type="email" class="form-control" id="email" name="email" placeholder="Enter E-Mail">
         </div>
         <div class="form-group">
           <div class="col-md-3 col-md-offset-4">
-            <button type="submit" class="btn btn-default">Submit</button>
+            <button type="submit" id="contactsubmit" class="btn btn-default">Submit</button>
           </div>
         </div>
       </div>
       <div class="col-md-7">
         <div class="form-group">
-          <textarea class="form-control" rows="8" placeholder="Enter message"></textarea>
+          <textarea class="form-control" rows="8" name="message" placeholder="Enter message"></textarea>
         </div>
       </div>
-    <form>
+    </form>
 </div>
 <div class="github col-md-10 col-md-offset-1">
     <p>Github Username:<a href="{{github_html_url}}">{{github_user.login}}</a></p>
