@@ -51,7 +51,7 @@ class CategoryListView(BlogMenuMixin, ListView):
          
         return context
 
-class EntriesYearArchiveView(YearArchiveView):
+class EntriesYearArchiveView(BlogMenuMixin, YearArchiveView):
     queryset = Entries.objects.all()
     date_field = "created"
     make_object_list = True
@@ -59,7 +59,7 @@ class EntriesYearArchiveView(YearArchiveView):
     context_object_name = "entries"
     template_name = "blog/blog_list.html"
 
-class EntriesMonthArchiveView(MonthArchiveView):
+class EntriesMonthArchiveView(BlogMenuMixin, MonthArchiveView):
     queryset = Entries.objects.all()
     date_field = "created"
     make_object_list = True

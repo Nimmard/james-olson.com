@@ -11,7 +11,10 @@ $(document).ready(function() {
             data: $('#contactform').serializeArray(),
             success: function(response) {
                 console.log(response);
-                $("#contactform").remove();
+                $("#contactform").fadeOut(500, function() {
+                    var html = "<p style='text-align: center;'><strong>" + response + "</strong></p>";
+                    $(html).appendTo(".contact").hide().fadeIn(500);
+                });
             },
             error: function(response) {
                 console.log(response);

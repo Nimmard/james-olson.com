@@ -7,6 +7,7 @@ import requests
 from settings import settings
 from main.forms import ContactForm
 from django.http import HttpResponse
+from django.http import Http404
 class SiteIndexView(TemplateView):
     template_name = 'main/index.html'
 
@@ -37,12 +38,14 @@ class SiteIndexView(TemplateView):
 def contact(request):
     if request.is_ajax():
         if request.method == "POST":
-            print request.POST
             form = ContactForm(request.POST)
             if form.is_valid():
                 message = "FORM IS VALID"
                 form.save()
             else:
                 message =  "Form is INVALID"
-            
-            return HttpResponse(message)
+        else:
+            raise Http404
+        return HttpResponse(message)
+    else:
+        raise Http404
