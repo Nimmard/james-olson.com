@@ -6,9 +6,9 @@ from calendar import month_name
 class BlogMenuMixin(object):
     
     def get_blog_archives(self):
-        edates = Entries.objects.dates('created', 'month')
+        edates = Entries.objects.filter(status=Entries.PUBLISHED).datetimes('created', 'month')
         archivedict = dict()
-        entries_list = Entries.objects.all()
+        entries_list = Entries.objects.filter(status=Entries.PUBLISHED)
         for entrydate in edates:
             monthname = month_name[entrydate.month]
             if entrydate.year in archivedict:
@@ -24,7 +24,7 @@ class BlogMenuMixin(object):
         return archivedict
     def get_context_data(self, **kwargs):
         context = super(BlogMenuMixin, self).get_context_data(**kwargs)
-        context['categories'] = set(Category.objects.filter(entries__isnull=False))
+        context['categories'] = set(Category.objects.filter(entries__status=Entries.PUBLISHED, entries__isnull=False).prefetch_related())
         context['archives'] = self.get_blog_archives()
 
         return context
@@ -36,7 +36,7 @@ class BlogDetailView(BlogMenuMixin, DetailView):
 
 class BlogListView(BlogMenuMixin, ListView):
     template_name="blog/blog_list.html"
-    queryset = Entries.objects.all().select_related()
+    queryset = Entries.objects.filter(status=Entries.PUBLISHED).select_related()
     context_object_name = "entries"
 
 
@@ -52,7 +52,7 @@ class CategoryListView(BlogMenuMixin, ListView):
         return context
 
 class EntriesYearArchiveView(BlogMenuMixin, YearArchiveView):
-    queryset = Entries.objects.all()
+    queryset = Entries.objects.filter(status=Entries.PUBLISHED)
     date_field = "created"
     make_object_list = True
     allow_future = True
@@ -60,7 +60,7 @@ class EntriesYearArchiveView(BlogMenuMixin, YearArchiveView):
     template_name = "blog/blog_list.html"
 
 class EntriesMonthArchiveView(BlogMenuMixin, MonthArchiveView):
-    queryset = Entries.objects.all()
+    queryset = Entries.objects.filter(status=Entries.PUBLISHED)
     date_field = "created"
     make_object_list = True
     allow_future = True
