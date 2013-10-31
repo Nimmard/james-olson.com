@@ -72,7 +72,7 @@
         <div class="ientries col-md-6">
             <h4><a href="{{entry.get_absolute_url}}">{{entry.title}}</a></h4>
             <span class="entryposted">{{entry.created}}</span>
-            <p>{{ entry.body|shortenEntry:entry.get_absolute_url|safe}}</p>
+            <p>{{ entry.content|shortenEntry:entry.get_absolute_url|safe}}</p>
         </div>
     {% endfor %}
 </div>
