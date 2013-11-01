@@ -49,16 +49,21 @@
     </form>
 </div>
 <div class="github col-md-10 col-md-offset-1">
-    <p>Github Username:<a href="{{github_html_url}}">{{github_user.login}}</a></p>
-    {% for repo in github_repos %}
-    <div class="repo col-md-6" id="{{repo.name}}">
-            <a href="{{repo.svn_url}}">{{repo.name}}</a>
+    <p>Github Username:<a href="https://github.com/Nimmard/">Nimmard</a></p>
+    <div class="repo col-md-6" id="reader">
+            <a href="https://github.com/Nimmard/django-reader">django-reader</a>
             <p>
-                {{repo.description}}<br />
-                HTTPS Clone URL: <input type="text" class="cloneurl form-control" value="{{repo.clone_url|safe}}">
+                RSS aggregation project similar to Google Reader.<br />
+                HTTPS Clone URL: <input type="text" class="cloneurl form-control" value="https://github.com/Nimmard/django-reader.git">
             </p>
         </div>
-    {% endfor %}
+    <div class="repo col-md-6" id="jamesolson">
+            <a href="https://github.com/Nimmard/james-olson.com">james-olson.com</a>
+            <p>
+                Code for my personal site<br />
+                HTTPS Clone URL: <input type="text" class="cloneurl form-control" value="https://github.com/Nimmard/james-olson.com.git">
+            </p>
+        </div>
     {% for commit in commits %}
         <div class="commit col-md-6">
             {{commit.time|safe}}
