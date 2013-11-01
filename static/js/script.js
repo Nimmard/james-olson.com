@@ -3,8 +3,29 @@ $(document).ready(function() {
     $(".entry:first-of-type").addClass('first');
     $(".entry:first-of-type").removeClass('alternate');
 
+    $('#contactform').validate({
+        rules: {
+            name: {
+                required: true
+            },
+            email: {
+                required: true,
+                email: true
+            },
+            message: {
+                required: true}
+        },
+        highlight: function(element) {
+            $(element).closest('.form-group').addClass('has-error');
+        },
+        unhighlight: function(element) {
+            $(element).closest('.form-group').removeClass('has-error');
+        }
+    });
     $('#contactsubmit').click(function(event){
         event.preventDefault();
+        var valid = $('#contactform').valid();
+        if (valid) {
         $.ajax({
             url: '/contact/',
             type: 'post',
@@ -20,6 +41,6 @@ $(document).ready(function() {
                 console.log(response);
             }
         });
+        }
         });
-
 });
