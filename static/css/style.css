@@ -71,6 +71,9 @@ a {
 time {
   font-size: 12px;
 }
+#django-reader {
+  margin-left: 15px;
+}
 .repo {
   border-bottom: 3px solid black;
   min-height: 100px;
