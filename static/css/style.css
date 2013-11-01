@@ -79,6 +79,7 @@ time {
 }
 .github {
   background-color: #a6cd4c;
+  padding: 10px;
 }
 
 #gitinfo {
@@ -163,9 +164,6 @@ time {
   position: relative;
 }
 /*Contact */
-.inputfix {
-  padding-left: 0px;
-}
 .contact h2 {
   margin-top: 10px;
 }
