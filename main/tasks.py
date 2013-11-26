@@ -1,8 +1,12 @@
+from __future__ import absolute_import
 import feedparser
 import pytz
 from bs4 import BeautifulSoup
 from datetime import datetime
 from main.models import Commits
+from settings.celery import app
+
+@app.task
 def update_commits():
         feed = feedparser.parse('https://github.com/Nimmard.atom')
         entries = feed.entries
@@ -22,5 +26,4 @@ def update_commits():
                             summary = unicode(soup.blockquote.text)
                             )
                     addcommit.save()
-                    print "Woo saved!"
 
