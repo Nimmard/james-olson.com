@@ -4,7 +4,7 @@ import pytz
 from bs4 import BeautifulSoup
 from datetime import datetime
 from main.models import Commits
-from settings.celery import app
+from settings.celeryconfig import app
 
 @app.task
 def update_commits():

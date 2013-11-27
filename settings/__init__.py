@@ -1,2 +1,2 @@
 from __future__ import absolute_import
-from settings.celery import app
+from settings.celeryconfig import app
