@@ -30,15 +30,15 @@
           <h1 class="headername">James Olson</h1>
           <ul class="menuitems nav nav-pills pull-right">
             <li class="btn"><a href="{% url 'siteindex' %}">Home</a></li>
+            <li class="btn"><a href="{% url 'portfolio' %}">Portfolio</a></li>
             <li class="btn"><a href="{% url 'blogindex' %}">Blog</a></li>
-            <li class="btn"><a href="#">Portfolio</a></li>
           </ul>
         </div>
           {% block content %}
 
           {% endblock %}
         <div class="footer col-md-10 col-md-offset-1">
-          <span id="copyright">Copyright 2013 James Olson</span>
+          <span id="copyright">Copyright &copy;2013 James Olson</span>
         </div>
 
       </div>

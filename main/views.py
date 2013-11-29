@@ -14,6 +14,9 @@ class SiteIndexView(TemplateView):
         context['commits'] = Commits.objects.order_by('-date')[:4]
         return context
 
+class PortfolioView(TemplateView):
+    template_name = 'main/portfolio.html'
+
 def contact(request):
     if request.is_ajax():
         if request.method == "POST":
