@@ -172,13 +172,13 @@ time {
 }
 /*Footer*/
 .footer {
-  min-height: 40px;
+  min-height: 15px;
   background-color: #fe4c4c;
   text-align: center;
 }
 #copyright {
-  line-height: 2.5em;
-  font-size: 18px;
+  line-height: 2em;
+  font-size: 14px;
 }
 
 /* Blog Menu */
