@@ -1,1 +1,18 @@
 {% extends "base.html" %}
+{% load staticfiles %}
+{% block content %}
+<div class="col-md-10 col-md-offset-1">
+  <div class="col-md-offset-1" id="view-list">
+    <ul>
+      <li><a href="#" class="view-list-item" name="om">Occupy Medical</a></li>
+      <li><a href="#" class="view-list-item" name="rcc">Roseburg Carpet Cleaning</a></li>
+    </ul>
+  </div>
+  <div class="col-md-offset-1" id="om">
+    <img src="{% static 'images/Occupy Medical.png' %}">
+  </div>
+  <div class="col-md-offset-1" id="rcc">
+    <img src="{% static 'images/Roseburg Carpet Cleaning.png' %}">
+  </div>
+</div>
+{% endblock %}

@@ -188,3 +188,16 @@ time {
 .menu ul {
   list-style-type: none;
 }
+
+/* Portfolio Page */
+
+#rcc {
+  display: none;
+}
+#view-list {
+  text-align: center;
+}
+#view-list li  {
+  display: inline;
+  list-style-type: none;
+}

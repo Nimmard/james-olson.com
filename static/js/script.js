@@ -1,4 +1,12 @@
 $(document).ready(function() {
+    var active="om";
+    $('a.view-list-item').click(function() {
+        var divname = this.name;
+        $('#'+active).hide("slide", {direction: "right"}, 1200);
+        $('#'+divname).delay(800).show("slide", {direction: "right"}, 1200);
+        active = divname;
+    });
+
     $(".entry:nth-child(odd)").addClass('alternate');
     $(".entry:first-of-type").addClass('first');
     $(".entry:first-of-type").removeClass('alternate');
