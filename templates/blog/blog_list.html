@@ -7,7 +7,7 @@
                 <h3><a href="{{entry.get_absolute_url}}">{{ entry.title }}</a></h3>
                 <span class="entryposted">Posted: {{entry.created}}</a></span>
                 <span class="entrycat">Category: <a href="{{entry.category.get_absolute_url}}">{{entry.category}}</a></span>
-                <p>{{ entry.body }}</p>
+                <p>{{ entry.content }}</p>
             </div>
         {% endfor %}
     </div>
