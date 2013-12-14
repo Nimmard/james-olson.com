@@ -5,6 +5,7 @@ class Contact(models.Model):
     email = models.EmailField()
     message= models.TextField()
     date = models.DateField(auto_now=True)
+    phone = models.CharField(max_length=20)
 
 class Commits(models.Model):
     date = models.DateTimeField()
