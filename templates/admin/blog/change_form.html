@@ -1,0 +1,9 @@
+{% extends "admin/change_form.html" %}
+{% load i18n admin_urls %}
+{% block form_bottom %}
+<h1>Add an image</h1>
+{% for album in albums %}
+    {{album}}
+    {% endfor %}
+{% endblock %}
+
