@@ -3,6 +3,9 @@ from django.db import models
 class Album(models.Model):
     name = models.CharField(max_length=100)
     
+    def get_first_image(self):
+        return self.photo_set.all()[0]
+
     def __unicode__(self):
         return self.name
 
@@ -13,5 +16,4 @@ class Photo(models.Model):
 
     def __unicode__(self):
         return self.image.name
-
 
