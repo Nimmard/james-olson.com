@@ -1,2 +1,7 @@
 #dialog {
 }
+.albumchoices {
+  width: auto;
+  position: relative;
+  float: left;
+}

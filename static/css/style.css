@@ -158,9 +158,6 @@ time {
 }
 
 /* comments */
-#disqus_thread {
-  display: none;
-}
 
 #comments {
   margin: 0 auto;
