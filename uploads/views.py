@@ -3,8 +3,6 @@ from django.shortcuts import get_object_or_404
 from django.views.generic import ListView
 from uploads.models import Album, Photo
 from braces.views import AjaxResponseMixin, JSONResponseMixin
-from django.db.models import Q
-# Create your views here.
 
 class GetAlbumList(AjaxResponseMixin,JSONResponseMixin,ListView):
     model = Album
@@ -31,6 +29,7 @@ class GetSingleAlbum(AjaxResponseMixin, JSONResponseMixin, ListView):
         maindict = {}
         for single in self.get_queryset():
             temp_dict = { single.id : {
+                'name' : single.name,
                 'image' : str(single.image),
                 'caption' : single.caption,
                 'album' : single.album.id
