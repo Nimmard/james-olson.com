@@ -143,10 +143,9 @@ time {
   padding-right: 0px;
 }
 .entry {
-  padding-left: 15px;
 
-  padding-top: 1px;
-  padding-right: 15px;
+  overflow: hidden;
+  padding: 15px;
 }
 .entry h3 {
   margin-top: 10px;
@@ -198,3 +197,9 @@ time {
   display: inline;
   list-style-type: none;
 }
+
+.testing {
+  width: 200px;
+  height: 200px;
+  float: left;
+  }

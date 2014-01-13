@@ -11,7 +11,7 @@ $(document).ready(function() {
     function insert_image() {
         var textbox = $("#id_content");
         $(".highlightimage").each(function () {
-            textbox.insertAtCursor($(this).attr("src"));
+            textbox.insertAtCursor("[![blah blah](" + $(this).attr('src') + ")](" + $(this).attr('src')+ ")");
         });
     }
 

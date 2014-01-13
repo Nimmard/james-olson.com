@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load entryfilters %}
 
 {% block content %}
 <div class="col-md-10 col-md-offset-1">
@@ -6,7 +7,7 @@
         <h2>{{entry.title}}</h2>
         <span class="entryposted">Posted: {{entry.created}}</a></span>
         <span class="entrycat">Category: <a href="{{entry.category.get_absolute_url}}">{{entry.category}}</a></span>
-        <p>{{entry.content}}</p>
+        <p>{{entry.content|markdowner}}</p>
         <div id="disqus_thread"></div>
         <script type="text/javascript">
             /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
