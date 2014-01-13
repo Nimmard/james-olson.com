@@ -15,7 +15,7 @@ class EntriesAdmin(admin.ModelAdmin):
         css = {
                 "all" : ('css/blogadmin.css', "//code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css",)
                 }
-        js = ('//code.jquery.com/jquery-1.10.1.min.js', '//code.jquery.com/ui/1.10.3/jquery-ui.js', 'js/blogadmin.js',)
+        js = ('//code.jquery.com/jquery-1.10.1.min.js', '//code.jquery.com/ui/1.10.3/jquery-ui.js', 'js/jquery.textarea.caret.js', 'js/blogadmin.js',)
 
     list_display = ('title', 'status', 'featured', 'category', 'created', 'updated_at',)
     list_filter = ('status', 'category', 'created',)
