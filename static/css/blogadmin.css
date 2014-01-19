@@ -1,11 +1,27 @@
-#dialog {
-}
 .albumchoices {
-  width: auto;
   position: relative;
   float: left;
 }
 
+.singlealbum {
+  width: 100%;
+}
 .highlightimage {
   border: 3px solid blue;
+}
+.options {
+  float: left;
+  width: 50%;
+  height: 50px;
+}
+.options ul li {
+  list-style-type: none;
+  display: inline;
+}
+.active {
+  color: blue;
+}
+.images {
+  float: left;
+  margin: 15px;
 }
