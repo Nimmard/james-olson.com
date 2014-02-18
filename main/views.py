@@ -5,6 +5,7 @@ from main.forms import ContactForm
 from django.http import HttpResponse
 from django.http import Http404
 from main.models import Commits
+from django.core.mail import send_mail, BadHeaderError
 class SiteIndexView(TemplateView):
     template_name = 'main/index.html'
 
@@ -22,7 +23,14 @@ def contact(request):
         if request.method == "POST":
             form = ContactForm(request.POST)
             if form.is_valid():
-                message = "FORM IS VALID"
+                subject = "Contact from {0}".format(request.POST.get('name', ''))
+                body = request.POST.get('message', '')
+                from_email = request.POST.get('email', '')
+                try:
+                    send_mail(subject, body, from_email, ['nimmard@gmail.com'])
+                    message = "FORM IS VALID"
+                except BadHeaderError:
+                    message = 'Invalid Header Found'
                 form.save()
             else:
                 message =  "Form is INVALID"
