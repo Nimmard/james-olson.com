@@ -23,9 +23,16 @@ def contact(request):
         if request.method == "POST":
             form = ContactForm(request.POST)
             if form.is_valid():
-                subject = "Contact from {0}".format(request.POST.get('name', ''))
-                body = request.POST.get('message', '')
+                name = request.POST.get('name', '')
+                subject = "Contact from {0}".format(name)
                 from_email = request.POST.get('email', '')
+                body = """
+                        Name: {0}
+                        Phone Number: {1}
+                        E-mail: {2}
+                        Message: \n {3}""".format(name, 
+                                    request.POST.get('phone', ''), from_email,
+                                    request.POST.get('message', ''))
                 try:
                     send_mail(subject, body, from_email, ['nimmard@gmail.com'])
                     message = "FORM IS VALID"
