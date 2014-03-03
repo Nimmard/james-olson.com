@@ -7,8 +7,3 @@ class Contact(models.Model):
     date = models.DateField(auto_now=True)
     phone = models.CharField(max_length=20)
 
-class Commits(models.Model):
-    date = models.DateTimeField()
-    title = models.TextField()
-    code = models.TextField()
-    summary = models.TextField()

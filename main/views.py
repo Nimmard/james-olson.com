@@ -4,7 +4,6 @@ from blog.models import Entries
 from main.forms import ContactForm
 from django.http import HttpResponse
 from django.http import Http404
-from main.models import Commits
 from django.core.mail import send_mail, BadHeaderError
 class SiteIndexView(TemplateView):
     template_name = 'main/index.html'
@@ -12,7 +11,6 @@ class SiteIndexView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super(SiteIndexView, self).get_context_data(**kwargs)
         context['entries'] = Entries.objects.order_by('-created')[:4]
-        context['commits'] = Commits.objects.order_by('-date')[:4]
         return context
 
 class PortfolioView(TemplateView):
