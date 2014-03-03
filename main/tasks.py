@@ -4,9 +4,7 @@ import pytz
 from bs4 import BeautifulSoup
 from datetime import datetime
 from main.models import Commits
-from settings.celeryconfig import app
 
-@app.task
 def update_commits():
         feed = feedparser.parse('https://github.com/Nimmard.atom')
         entries = feed.entries
